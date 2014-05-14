@@ -17,8 +17,8 @@ require('log-timestamp');
 /**
  * Your sensor config goes here
  */
-var TMP35 = require('./lib/controller/tmp35.js');
-    // DHT22 = require('./lib/controller/dht22.js');
+var TMP35 = require('./lib/controller/tmp35.js'),
+    DHT22 = require('./lib/controller/dht22.js');
 
 var tempSensor = new TMP35({
   'sensorName': 'temperatur-wohnzimmer',
@@ -34,17 +34,18 @@ setInterval(function() {
   });
 }, 60000);
 
-// var humidSensor = new DHT22({
-//   'sensorName': 'dht22-wohnzimmer',
-// });
-//
-// setInterval(function() {
-//     humidSensor.read(function(err, value) {
-//       if(err) {
-//         console.error(err);
-//       } else {
-//         console.log(value.temp + '°C');
-//         console.log(value.hum + '%');
-//       }
-//     });
-// }, 7000);
+var humidSensor = new DHT22({
+  'sensorName': 'dht22-wohnzimmer',
+  'pin': 4,
+  'database': false
+});
+
+setInterval(function() {
+    humidSensor.read(function(err, value) {
+      if(err) {console.error(err);}
+      else {
+        console.log('Temperatur', value.temperature + '°C');
+        console.log('Feuchtigkeit', value.humidity + '%');
+      }
+    });
+}, 60000);

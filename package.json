@@ -16,7 +16,7 @@
     "mcp3008.js": "^0.2.0",
     "expect.js": "^0.3.1",
     "log-timestamp": "^0.1.1",
-    "sensor-am2302": "git://github.com/hoegaarden/sensor-am2302.git"
+    "node-dht-sensor": "git://github.com/momenso/node-dht-sensor.git"
   },
   "main": "index.js",
   "scripts": {
