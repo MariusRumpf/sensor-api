@@ -17,7 +17,7 @@ require('log-timestamp');
 /**
  * Your sensor config goes here
  */
-var TMP35 = require('./lib/controller/tmp35.js'),
+var TMP35 = require('./lib/controller/tmp35.js');
     // DHT22 = require('./lib/controller/dht22.js');
 
 var tempSensor = new TMP35({
