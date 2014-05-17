@@ -29,7 +29,7 @@ var tempSensor = new TMP35({
 
 setInterval(function() {
   tempSensor.read(function(err, value) {
-    if(err) throw err;
+    if(err){ throw err; }
     console.log('Temperatur', value + '°C');
   });
 }, 60000);
@@ -42,7 +42,7 @@ var humidSensor = new DHT22({
 
 setInterval(function() {
     humidSensor.read(function(err, value) {
-      if(err) {console.error(err);}
+      if(err) { console.error(err); }
       else {
         console.log('Temperatur', value.temperature + '°C');
         console.log('Feuchtigkeit', value.humidity + '%');

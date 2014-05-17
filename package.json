@@ -7,7 +7,9 @@
   "dependencies": {
     "mongodb": "~1.4.2",
     "mongoose": "~3.8.8",
-    "lodash": "~2.4.1"
+    "lodash": "~2.4.1",
+    "mcp3008.js": "~0.2.0",
+    "log-timestamp": "^0.1.1"
   },
   "devDependencies": {
     "mocha": "^1.18.2",
@@ -16,15 +18,16 @@
     "mcp3008.js": "^0.2.0",
     "expect.js": "^0.3.1",
     "log-timestamp": "^0.1.1",
-    "node-dht-sensor": "git://github.com/momenso/node-dht-sensor.git"
+    "node-dht-sensor": "git://github.com/momenso/node-dht-sensor.git",
+    "gulp": "^3.6.2",
+    "gulp-jshint": "^1.6.1"
   },
   "main": "index.js",
   "scripts": {
     "test": "NODE_ENV=test mocha lib/test/"
   },
-  "repository" :
-  {
-    "type" : "git",
-    "url" : "http://github.com/MariusRumpf/sensor-api.git"
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/MariusRumpf/sensor-api.git"
   }
 }
