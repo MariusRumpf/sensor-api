@@ -1,7 +1,7 @@
 'use strict';
 
 var gulp = require('gulp'),
-    // nodemon = require('gulp-nodemon'),
+    nodemon = require('gulp-nodemon'),
     jshint = require('gulp-jshint');
 
 /*******************************************************************************
@@ -19,7 +19,7 @@ var files = {
 
 
 /*******************************************************************************
-* Helper functions
+* HELPER FUNCTIONS
 *******************************************************************************/
 function clearConsole() {
     var lines = process.stdout.getWindowSize()[1];
@@ -29,7 +29,7 @@ function clearConsole() {
 }
 
 /*******************************************************************************
-* Lint TASK
+* LINT TASK
 *******************************************************************************/
 
 gulp.task('lint', function () {
@@ -51,19 +51,26 @@ gulp.task('watch', function() {
 
 
 /*******************************************************************************
-* Nodemon task
+* NODEMON TASK
 *******************************************************************************/
 
-// gulp.task('develop', function () {
-//   nodemon({ script: 'server.js', ext: 'html js', ignore: ['ignored.js'] })
-//     .on('change', ['lint'])
-//     .on('restart', function () {
-//       console.log('restarted!')
-//     })
-// })
+gulp.task('nodemon', function () {
+  nodemon({
+    script: 'index.js',
+    ext: 'html js'
+  });
+});
 
 
 /*******************************************************************************
 * GULP DEFAULT TASK
 *******************************************************************************/
-gulp.task('default', ['lint', 'watch']);
+
+gulp.task('default', ['lint']);
+
+
+/*******************************************************************************
+* GULP DEVELOP TASK
+*******************************************************************************/
+
+gulp.task('develop', ['watch', 'nodemon']);
