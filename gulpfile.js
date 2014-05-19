@@ -73,4 +73,4 @@ gulp.task('default', ['lint']);
 * GULP DEVELOP TASK
 *******************************************************************************/
 
-gulp.task('develop', ['watch', 'nodemon']);
+gulp.task('dev', ['watch', 'nodemon']);
