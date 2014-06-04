@@ -28,13 +28,12 @@ var tempSensor = new TMP35({
 });
 
 setInterval(function() {
-  tempSensor.read(function(err, value) {
-    if(err) { console.error(err); }
-    else {
-      console.log('TMP35: Temperatur', value + '°C');
+  tempSensor.read(function(err) {
+    if(err) {
+      console.error(err);
     }
   });
-}, 30000);
+}, 2000);
 
 var humidSensor = new DHT22({
   'sensorName': 'dht22-wohnzimmer',
@@ -43,11 +42,9 @@ var humidSensor = new DHT22({
 });
 
 setInterval(function() {
-    humidSensor.read(function(err, value) {
-      if(err) { console.error(err); }
-      else {
-        console.log('DHT22: Temperatur', value.temperature + '°C');
-        console.log('DHT22: Luftfeuchtigkeit', value.humidity + '%');
+    humidSensor.read(function(err) {
+      if(err) {
+        console.error(err);
       }
     });
-}, 30000);
+}, 60000);
