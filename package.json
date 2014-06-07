@@ -20,8 +20,8 @@
     "log-timestamp": "^0.1.1",
     "node-dht-sensor": "^0.0.2",
     "gulp": "^3.7.0",
-    "gulp-jshint": "^1.6.1",
-    "gulp-nodemon": "^1.0.3"
+    "gulp-jshint": "^1.6.2",
+    "gulp-nodemon": "^1.0.4"
   },
   "main": "index.js",
   "scripts": {
